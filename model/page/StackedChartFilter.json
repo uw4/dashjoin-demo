@@ -1,0 +1,48 @@
+{
+    "ID": "StackedChartFilter",
+    "layout": {
+        "widget": "page",
+        "pageLayout": "grid",
+        "children": [
+            {
+                "widget": "variable",
+                "title": "Select Year",
+                "x": 0,
+                "y": 0,
+                "rows": 1,
+                "cols": 1,
+                "properties": {
+                    "year": "string"
+                },
+                "createSchema": {
+                    "type": "object",
+                    "properties": {
+                        "year": {
+                            "type": "string",
+                            "widget": "select",
+                            "layout": "horizontal",
+                            "choices": [
+                                "1996",
+                                "1997",
+                                "1998"
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "widget": "chart",
+                "text": "New Widget",
+                "x": 1,
+                "y": 0,
+                "rows": 1,
+                "cols": 2,
+                "query": "sum-products-country",
+                "database": "northwind",
+                "chart": "bar",
+                "title": "Total Number of Products Ordered by Category and Country",
+                "arguments": "{\"year\": variable.year} "
+            }
+        ]
+    }
+}

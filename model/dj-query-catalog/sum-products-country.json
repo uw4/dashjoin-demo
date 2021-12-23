@@ -1,0 +1,15 @@
+{
+    "database": "dj/northwind",
+    "query": "SELECT\n  \"ORDERS\".\"SHIP_COUNTRY\", \"CATEGORIES\".\"CATEGORY_NAME\", SUM(\"ORDER_DETAILS\".\"QUANTITY\")\nFROM\n  \"PRODUCTS\"\n    INNER JOIN \"ORDER_DETAILS\" ON \"PRODUCTS\".\"PRODUCT_ID\" = \"ORDER_DETAILS\".\"PRODUCT_ID\"\n    INNER JOIN \"ORDERS\" ON \"ORDERS\".\"ORDER_ID\" = \"ORDER_DETAILS\".\"ORDER_ID\"\n    INNER JOIN \"CATEGORIES\" ON \"PRODUCTS\".\"CATEGORY_ID\" = \"CATEGORIES\".\"CATEGORY_ID\"\nWHERE\n  substring(\"ORDERS\".\"ORDER_DATE\" from 1 for 4) = ${year}\nGROUP BY\n   \"ORDERS\".\"SHIP_COUNTRY\", \"CATEGORIES\".\"CATEGORY_NAME\"\nORDER BY\n   \"CATEGORIES\".\"CATEGORY_NAME\"",
+    "ID": "sum-products-country",
+    "type": "read",
+    "roles": [
+        "authenticated"
+    ],
+    "arguments": {
+        "year": {
+            "type": "string",
+            "sample": "1998"
+        }
+    }
+}
