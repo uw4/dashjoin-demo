@@ -1,0 +1,9 @@
+{
+    "database": "dj/sqlite",
+    "query": "SELECT\n  \"REQUESTS\".\"customer\", COUNT(\"REQUESTS\".\"ID\")\nFROM\n  \"REQUESTS\"\nGROUP BY\n   \"REQUESTS\".\"customer\"",
+    "ID": "firestore2",
+    "type": "read",
+    "roles": [
+        "authenticated"
+    ]
+}

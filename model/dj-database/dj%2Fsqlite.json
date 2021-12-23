@@ -1,0 +1,19 @@
+{
+    "name": "sqlite",
+    "ID": "dj/sqlite",
+    "djClassName": "org.dashjoin.service.SQLDatabase",
+    "url": "jdbc:sqlite:dashjoin-demo.db",
+    "readRoles": [
+        "authenticated"
+    ],
+    "tables": {
+        "REQUESTS": {
+            "properties": {
+                "customer": {
+                    "ref": "dj/northwind/CUSTOMERS/CUSTOMER_ID",
+                    "displayWith": "fk"
+                }
+            }
+        }
+    }
+}

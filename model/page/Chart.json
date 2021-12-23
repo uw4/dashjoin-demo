@@ -20,8 +20,8 @@
                 "y": 1,
                 "rows": 1,
                 "cols": 1,
-                "query": "firestore",
-                "database": "firestore",
+                "query": "firestore2",
+                "database": "sqlite",
                 "chart": "doughnut"
             },
             {

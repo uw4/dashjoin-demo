@@ -1,0 +1,9 @@
+{
+    "djClassName": "org.dashjoin.function.Invoke",
+    "ID": "file",
+    "expression": "$doc2data($crawl(\"file:upload\"))",
+    "type": "read",
+    "roles": [
+        "authenticated"
+    ]
+}
