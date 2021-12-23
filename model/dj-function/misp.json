@@ -1,12 +1,22 @@
 {
     "djClassName": "org.dashjoin.mapping.ETL",
-    "database": "northwind",
+    "database": "sqlite",
     "ID": "misp",
     "roles": [
         "admin"
     ],
     "type": "write",
-    "expression": "$doc2data($crawl(\"https://www.circl.lu/doc/misp/feed-osint/\")[6]).Event",
+    "expression": "$doc2data($crawl(\"https://www.circl.lu/doc/misp/feed-osint/\")[6]).Event.Attribute",
     "oldData": "Delete All",
-    "createSchema": true
+    "createSchema": true,
+    "mappings": {
+        "MISP_Event": {
+            "sourceTable": "table",
+            "extractColumn": null,
+            "extractKey": null,
+            "pk": "uuid",
+            "rowMapping": null,
+            "rowFilter": null
+        }
+    }
 }
