@@ -22,4 +22,4 @@ The container is started with three environment variables:
 * DASHJOIN_HOME: moves the location of the model folder to ./dashjoin-demo
 * DASHJOIN_APPURL: clones this repository upon startup
 
-
+You can also check out a read-only copy by visiting https://demo.my.dashjoin.com/ and logging in with the guest user.
