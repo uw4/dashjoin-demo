@@ -1,0 +1,9 @@
+{
+    "database": "dj/northwind",
+    "query": "SELECT\n  \"ORDERS\".\"ORDER_DATE\", COUNT(\"ORDERS\".\"ORDER_ID\")\nFROM\n  \"ORDERS\"\nWHERE\n  \"ORDERS\".\"ORDER_DATE\" BETWEEN '1998-02-01' AND '1998-03-01'\nGROUP BY\n   \"ORDERS\".\"ORDER_DATE\"\nORDER BY\n   \"ORDERS\".\"ORDER_DATE\"",
+    "ID": "orders-over-time",
+    "type": "read",
+    "roles": [
+        "authenticated"
+    ]
+}

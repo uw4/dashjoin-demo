@@ -1,0 +1,26 @@
+{
+    "ID": "Timeline",
+    "layout": {
+        "widget": "page",
+        "pageLayout": "grid",
+        "children": [
+            {
+                "widget": "chart",
+                "title": "Orders in February",
+                "query": "orders-over-time",
+                "database": "northwind",
+                "chart": "bar",
+                "x": 0,
+                "y": 0,
+                "rows": 1,
+                "cols": 1,
+                "style": {
+                    "scales.yAxes.ticks.min": "0",
+                    "scales.xAxes.type": "time",
+                    "scales.xAxes.ticks.min": "1998-02-01",
+                    "scales.xAxes.ticks.max": "1998-02-28"
+                }
+            }
+        ]
+    }
+}
