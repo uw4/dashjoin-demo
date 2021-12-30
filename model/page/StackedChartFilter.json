@@ -31,12 +31,21 @@
                 }
             },
             {
+                "widget": "markdown",
+                "text": "New Widget",
+                "x": 0,
+                "y": 1,
+                "rows": 1,
+                "cols": 1,
+                "markdown": "Stacked bar chart example. The query projects 2 label and one value column. It also takes the \"year\" parameter that is provided by the variable widget:\n\n```\n{\n  \"widget\": \"chart\",\n  \"query\": \"sum-products-country\",\n  \"database\": \"northwind\",\n  \"chart\": \"bar\",\n  \"title\": \"Total Number of Products Ordered by Category and Country\",\n  \"arguments\": \"{\\\"year\\\": variable.year} \"\n}\n```"
+            },
+            {
                 "widget": "chart",
                 "text": "New Widget",
                 "x": 1,
                 "y": 0,
-                "rows": 1,
-                "cols": 2,
+                "rows": 2,
+                "cols": 4,
                 "query": "sum-products-country",
                 "database": "northwind",
                 "chart": "bar",
