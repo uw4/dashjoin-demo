@@ -1,5 +1,5 @@
 {
-    "ID": "Timeline",
+    "ID": "chart-timeline",
     "layout": {
         "widget": "page",
         "pageLayout": "grid",
@@ -10,7 +10,7 @@
                 "query": "orders-over-time",
                 "database": "northwind",
                 "chart": "bar",
-                "x": 0,
+                "x": 1,
                 "y": 0,
                 "rows": 1,
                 "cols": 1,
