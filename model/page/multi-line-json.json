@@ -6,6 +6,7 @@
         "children": [
             {
                 "widget": "markdown",
+				// we can also add comments here
                 "markdown": "
 # Multi Line JSON
 
