@@ -15,7 +15,6 @@
             },
             {
                 "widget": "chart",
-                "text": "New Widget",
                 "x": 1,
                 "y": 1,
                 "rows": 1,
@@ -30,8 +29,18 @@
                 "query": "group",
                 "x": 0,
                 "y": 0,
-                "rows": 2,
+                "rows": 1,
                 "cols": 1
+            },
+            {
+                "widget": "table",
+                "x": 0,
+                "y": 1,
+                "rows": 1,
+                "cols": 1,
+                "query": "cypher",
+                "database": "*",
+                "graph": true
             }
         ],
         "pageLayout": "grid"

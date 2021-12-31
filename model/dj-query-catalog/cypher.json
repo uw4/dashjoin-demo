@@ -1,0 +1,4 @@
+{
+    "ID": "cypher",
+    "query": "MATCH path=(start:`dj/northwind/EMPLOYEES`)-[r1:REPORTS_TO]->(boss)-[r2:REPORTS_TO]->(finish) RETURN start._dj_resource, boss.LAST_NAME, finish._dj_resource, path"
+}
