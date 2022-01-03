@@ -1,0 +1,28 @@
+{
+    "djClassName": "org.dashjoin.service.RemoteDatabase",
+    "ID": "dj/rdf4j",
+    "url": "http://localhost:8082/database",
+    "name": "rdf4j",
+    "tables": {
+        "http://www.semwebtech.org/mondial/10/meta#Country": {
+            "instanceLayout": {
+                "widget": "page",
+                "children": [
+                    {
+                        "widget": "display",
+                        "display": "{\"img\": value.\"http://www.semwebtech.org/mondial/10/meta#flag\", \"width\": \"200px\"}"
+                    },
+                    {
+                        "widget": "edit",
+                        "title": "Edit Record",
+                        "deleteConfirmation": "Are you sure you want to delete this record?"
+                    },
+                    {
+                        "widget": "links",
+                        "title": "Related Records"
+                    }
+                ]
+            }
+        }
+    }
+}
