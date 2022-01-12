@@ -1,0 +1,9 @@
+{
+    "database": "dj/rdf4j",
+    "query": "select ?Country ?name ?locatedIn ?name_ \nwhere {\n  ?Country <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semwebtech.org/mondial/10/meta#Country> . \n  ?Country <http://www.semwebtech.org/mondial/10/meta#name> ?name . \n  ?locatedIn <http://www.semwebtech.org/mondial/10/meta#locatedIn> ?Country . \n  ?locatedIn <http://www.semwebtech.org/mondial/10/meta#name> ?name_\n}",
+    "ID": "locatedInCountry",
+    "roles": [
+        "authenticated"
+    ],
+    "type": "read"
+}
