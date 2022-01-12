@@ -32,3 +32,17 @@ Dashjoin.exe
 ```
 
 You can also check out a read-only copy by visiting https://demo.my.dashjoin.com/ and logging in with the guest user.
+
+## Unit Testing the App
+
+This demo comes with a JUnit test that performs the following checks:
+
+* makes sure all JSON files can be parsed
+* makes sure layout use legal widget names
+* makes sure JSONata expressions are syntactically correct
+
+To run the unit test:
+
+```
+dashjoin-demo>mvn test
+```
