@@ -1,7 +1,9 @@
 package org.dashjoin.app;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,6 +14,8 @@ import com.api.jsonata4java.expressions.functions.FloorFunction;
 import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 
 /**
@@ -44,6 +48,9 @@ public class AppTest {
       "$djVersion", "$djGetDatabases", "$djGetDrivers", "$djGetFunctions", "$echo",
       "$alterColumnTrigger", "$alterTableTrigger", "$doc2data", "$djSubscription", "$crawl");
 
+  /**
+   * syntax check of the files in the model folder
+   */
   @Test
   public void testJson() throws Exception {
     for (File file : new File("model").listFiles()) {
@@ -84,6 +91,52 @@ public class AppTest {
           }
         }
       }
+    }
+  }
+
+  /**
+   * JSONata unit test
+   */
+  @Test
+  public void testLogic() throws Exception {
+    testDriver("test.json");
+  }
+
+  /**
+   * run the test spec in the given file
+   */
+  void testDriver(String file) throws Exception {
+    ObjectMapper om =
+        new ObjectMapper().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+            .configure(JsonReadFeature.ALLOW_UNESCAPED_CONTROL_CHARS.mappedFeature(), true)
+            .configure(JsonReadFeature.ALLOW_SINGLE_QUOTES.mappedFeature(), true)
+            .configure(JsonReadFeature.ALLOW_JAVA_COMMENTS.mappedFeature(), true);
+
+    // read file and select expression
+    JsonNode map = om.readTree(new FileInputStream(new File(file)));
+    file = map.get("test").get("file").asText();
+    JsonNode test = om.readTree(new FileInputStream(new File(file)));
+    String expr =
+        Expression.jsonata(map.get("test").get("expression").asText()).evaluate(test).asText();
+
+    // iterate cases
+    Expression e = Expression.jsonata(expr);
+    Iterator<String> cases = map.get("cases").fieldNames();
+    while (cases.hasNext()) {
+      String name = cases.next();
+      JsonNode c = map.get("cases").get(name);
+      ObjectNode basedata = map.get("basedata").deepCopy();
+
+      // merge base data
+      Iterator<String> dataFields = c.get("data").fieldNames();
+      while (dataFields.hasNext()) {
+        String field = dataFields.next();
+        basedata.set(field, c.get("data").get(field));
+      }
+
+      // eval and check
+      Assert.assertEquals("error in case: " + name, "" + c.get("expected"),
+          "" + e.evaluate(basedata));
     }
   }
 }

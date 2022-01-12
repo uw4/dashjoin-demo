@@ -41,6 +41,34 @@ This demo comes with a JUnit test that performs the following checks:
 * makes sure layout use legal widget names
 * makes sure JSONata expressions are syntactically correct
 
+In addition to these syntactical checks, it is possible to test JSONata expressions using this test:
+
+```
+  @Test
+  public void testLogic() throws Exception {
+    testDriver("test.json");
+  }
+```
+
+The file [test.json](test.json) is structured as follows:
+
+```
+{
+    "test": {
+        "file": path to the file containing the expression to be checked
+        "expression": JSONata expression that selects the expression to be checked
+    },
+    "basedata": optional common test data for the test cases
+    "cases": {
+        "name": {
+            "data": test data (will be merged with the base data)
+            "expected": expected JSONata output
+        }
+        ...
+    }
+}
+```
+
 To run the unit test:
 
 ```

@@ -1,0 +1,9 @@
+{
+    "ID": "add",
+    "djClassName": "org.dashjoin.function.Invoke",
+    "expression": "{\"result\": x+y}",
+    "roles": [
+        "authenticated"
+    ],
+    "type": "read"
+}

@@ -1,0 +1,35 @@
+{
+    "test": {
+        "file": "model/dj-function/add.json",
+        "expression": "expression"
+    },
+    "basedata": {
+        "x": 1,
+        "y": 2
+    },
+    "cases": {
+        "test1": {
+            "data": {},
+            "expected": {
+                "result": 3
+            }
+        },
+        "test2": {
+            "data": {
+                "x": 3
+            },
+            "expected": {
+                "result": 5
+            }
+        },
+        "test3": {
+            "data": {
+                "x": 3,
+                "y": 4
+            },
+            "expected": {
+                "result": 7
+            }
+        }
+    }
+}
