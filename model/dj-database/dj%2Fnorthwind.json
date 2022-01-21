@@ -52,7 +52,7 @@
                     {
                         "widget": "button",
                         "text": "Email Customer",
-                        "print": "$string({\"from\":user, \"to\":value.CUSTOMER_ID, \"subject\": form.subject, \"body\": form.body})",
+                        "print": "$string({\"from\":email, \"to\":value.CUSTOMER_ID, \"subject\": form.subject, \"body\": form.body})",
                         "properties": {
                             "subject": "string",
                             "body": "string"
