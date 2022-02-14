@@ -1,0 +1,42 @@
+{
+    "ID": "Home",
+    "layout": {
+        "widget": "page",
+        "children": [
+            {
+                "widget": "markdown",
+                "markdown": "### [Universal DB Frontend](/#/table/config/dj-database)\n\nConnect to any SQL or NoSQL database, browse, search, and edit its contents. Extend the schema on the fly. \n\n [<img src=\"https://img.youtube.com/vi/zXXtR9zSOXs/mqdefault.jpg\">](https://www.youtube.com/watch?v=zXXtR9zSOXs)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### [Query Catalog & Editor](/#/table/config/dj-query-catalog)\n\nAutomatically collect schema information that powers an intuitive graphical query editor! \n\n [<img src=\"https://img.youtube.com/vi/yxjE8GgXtfo/mqdefault.jpg\">](https://www.youtube.com/watch?v=yxjE8GgXtfo)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### [Layout Designer](/#/table/config/page)\n\nGraphically customize the layout for different types found in the database. Leverage the query editor to include meaningful charts.\n\n [<img src=\"https://img.youtube.com/vi/RuM-im9wd58/mqdefault.jpg\">](https://www.youtube.com/watch?v=RuM-im9wd58)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### [Functions and Processes](/#/table/config/dj-function)\n\nSeamlessly start and integrate REST services from the application and monitor progress. \n\n [<img src=\"https://img.youtube.com/vi/XuymQh6aMIk/mqdefault.jpg\">](https://www.youtube.com/watch?v=XuymQh6aMIk)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### Data Integration and Federation\n\nVisually map external data sources to your model. Load the data into a warehouse or federate the source into a virtual linked-data graph. \n\n [<img src=\"https://img.youtube.com/vi/ZsjyucALidY/mqdefault.jpg\">](https://www.youtube.com/watch?v=ZsjyucALidY)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### [Getting Started & Cloud Deployment](https://my.dashjoin.com/)\n\nDownload the platform or deploy the apps in your private cloud or book our PaaS service. All apps scale horizontally and support state of the art cloud stacks. \n\n [<img src=\"https://img.youtube.com/vi/_xmFRwhbAFA/mqdefault.jpg\">](https://www.youtube.com/watch?v=_xmFRwhbAFA)"
+            },
+            {
+                "widget": "markdown",
+                "markdown": "### [Rich Support Matrix](/#/page/Info)\n\nDashjoin supports a wide variety of SQL and NoSQL databases. You can construct queries in a uniform way and you can even define relationships between record from different databases and database types in order to enable a seamless browsing experience. \n\n [<img src=\"https://img.youtube.com/vi/_itCZjvw9D8/mqdefault.jpg\">](https://www.youtube.com/watch?v=_itCZjvw9D8)"
+            },
+            {
+                "widget": "markdown",
+                "title": null,
+                "markdown": "# Universal _Database_ Browser\n\n* Different kinds of databases (relational, document, graph) can be [registered](/#/table/config/dj-database)\n* All metadata is collected automatically\n* By default, every table shows a [\"select all\" table](/#/table/northwind/EMPLOYEES) and a form to create new records\n* Note how the form reflects the database metadata automatically. On the new employee form, enter the letter D in the \"reports to\" field. The system automatically shows an auto-complete based on the valid range\n* All IDs are links to the respective instance pages\n* Using additional metadata, we instructed the system to use the employee last name instead of the ID as the link label\n* The [instance page](/#/resource/northwind/EMPLOYEES/2) also shows all related records\n* [On this record](/#/resource/northwind/CUSTOMERS/ALFKI), this includes related records on other databases. This relationship can be added by the user\n* Perform a [search](/#/search/cheese) across all database\n\n# Query Catalog & Editor\n\n* The query catalog manages various queries that are used in the app\n* On the [query page](/#/resource/config/dj-query-catalog/sum-products-country), press \"Editor\" to play with the query\n* [SPARQL example](/#/resource/config/dj-query-catalog/locatedInCountry)\n* [Firestore example](/#/resource/config/dj-query-catalog/firestore)\n\n# Layout Designer\n\n* Queries can be used to drive [dashboards](/#/page/Chart). Press the pen symbol, enter the widget context menu, and select edit to modify widgets. You can also drag and drop widgets if the grid layout is active (see top left)\n* Instance pages can also be customized. The [customer page](/#/resource/northwind/CUSTOMERS/ALFKI) contains a widget to send an email to the customer and to check the customer address using an external address validation service\n\n# Functions and Processes\n\n* [Functions](/#/table/config/dj-function) allow configuring external services such as email and REST APIs\n* [This service](/#/resource/config/dj-function/address) configures the address service used on the customer page\n* [Email](/#/resource/config/dj-function/email) is defined here\n\n# Data Integration and Federation\n\n* Functions can also include extract transform load (ETL) that allows loading data into one of the connected DBs\n* [This example](/#/resource/config/dj-function/misp) loads JSON data from the web. Press \"Run\" to start the ETL. This will create a new [table](/#/table/sqlite/MISP_Event) and load the data.\n\n# Rich Support Matrix\n\n* As mentioned before, Dashjoin can handle relational, document, and graph DBs\n* Dashjoin also supports graph queries offered by the databases and even support [OpenCypher queries](/#/resource/config/dj-query-catalog/cypher) across databases\n* Graph queries can also be used on Charts and [Tables](/#/page/Chart) (the org chart display is driven by the OpenCypher query)"
+            }
+        ],
+        "pageLayout": "3 column"
+    }
+}
