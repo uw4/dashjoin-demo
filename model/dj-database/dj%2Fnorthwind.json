@@ -46,6 +46,10 @@
                         "deleteConfirmation": "Are you sure you want to delete this record?"
                     },
                     {
+                        "widget": "map",
+                        "display": "value.CITY & \", \" & value.COUNTRY",
+                    },
+                    {
                         "widget": "links",
                         "title": "Related Records"
                     },
