@@ -47,7 +47,7 @@
                     },
                     {
                         "widget": "map",
-                        "display": "value.CITY & \", \" & value.COUNTRY",
+                        "display": "value.CITY & \", \" & value.COUNTRY"
                     },
                     {
                         "widget": "links",
