@@ -1,0 +1,10 @@
+{
+    "ID": "dj/config",
+    "tables": {
+        "tenantusers": {
+            "readRoles": [
+                "admin"
+            ]
+        }
+    }
+}
