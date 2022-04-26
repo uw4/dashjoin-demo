@@ -1,0 +1,16 @@
+{
+    "ID": "html",
+    "layout": {
+        "widget": "page",
+        "pageLayout": "horizontal",
+        "children": [
+            {
+                "widget": "html",
+                "title": "Employees",
+                "html": "<ul>\n  <% for (i of context) { %>\n    <li>\n      <%=i.LAST_NAME%>\n    </li>\n  <% } %>\n</ul>\n",
+                "css": "li {\n  background: yellow;\n}",
+                "context": "$all(\"northwind\", \"EMPLOYEES\")"
+            }
+        ]
+    }
+}
