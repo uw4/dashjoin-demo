@@ -1,0 +1,50 @@
+{
+    "ID": "html-SampleCards2",
+    "layout": {
+        "widget": "page",
+        "pageLayout": "horizontal",
+        "children": [{
+                "widget": "html",
+                "text": "New Widget",
+                "html": "<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>\n<span id=\"page\"><div class=\"statbox\">Statistics\n  <div id=\"quote\">\n    “Facts are stubborn things, but statistics are pliable.” - Mark Twain\n  </div></div>\n<div class=\"statbox\" style=\"color:#E6293C\">\n  <div class=\"number\">5,386</div>\n  <div class=\"type\" style=\"color:#F26F7D\">Engineering Students\n  <div class=\"details\" style=\"color:#E6293C\">studying full-time</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#F4733D\">\n  <div class=\"number\">41,400</div>\n  <div class=\"type\" style=\"color:#FAB669\">Graduates\n  <div class=\"details\" style=\"color:#F4733D\">since 1873</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#F1F73E\">\n  <div class=\"number\">248</div>\n  <div class=\"type\" style=\"color:#F4F799\">Profs\n  <div class=\"details\" style=\"color:#F1F73E\">currently teaching</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#A4E838\">\n  <div class=\"number\">316</div>\n  <div class=\"type\" style=\"color:#C6F27E\">Students\n  <div class=\"details\" style=\"color:#A4E838\">studying software engineering</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#42C91C\">\n  <div class=\"number\">31</div>\n  <div class=\"type\" style=\"color:#8AF26D\">Women\n  <div class=\"details\" style=\"color:#42C91C\">studying software engineering</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#2A8DDE\">\n  <div class=\"number\">16</div>\n  <div class=\"type\" style=\"color:#7CBDF2\">Specialties\n  <div class=\"details\" style=\"color:#2A8DDE\">in engineering offered</div></div>\n  </div>\n<div class=\"statbox\" style=\"color:#7148B8\">\n  <div class=\"number\">250</div>\n  <div class=\"type\" style=\"color:#AE8AEB\">Agreements\n  <div class=\"details\" style=\"color:#7148B8\">with institutions all over the world</div></div>\n  </div>\n</span>",
+                "css": ".body {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    letter-spacing: 2px;\n}\n#quote {\n    font-size: 10pt;  \n    color: #848484;\n    letter-spacing: 0px;\n}\n\n.number {\n  width:46%;\n  font-size: 40pt;\n  position:relative;\n  float:left;\n  text-align:right;\n  overflow:hidden;\n  padding-top:15px;\n  padding-right:15px;\n}\n\n.type {\n  font-family: 'Roboto', sans-serif;\n  font-size:5pt;\n  padding-top:19px;\n  width:46%;\n  float:left;\n  position:relative;\n  text-align:left;\n  overflow:hidden;\n  font-size: 20pt;  \n  padding-left:15px;\n  \n}\n.details {\n  font-size:10pt;\n  font-style: italic;\n}\n.statbox div {\n /* float:left; */\n}\n\n.statbox {\n  height:90px;\n  background: -webkit-linear-gradient(#120F0F, #151212);\n  background: -o-linear-gradient(#120F0F, #151212);\n  background: -moz-linear-gradient(#120F0F, #151212);\n  background: linear-gradient(#120F0F, #151212);\n  \n  text-align: center;\n  color: #ecf0f1;\n  font-size: 30pt;\n  font-family: 'Montserrat', sans-serif;\n  \n}\n#page{\n  height:500px;\n}",
+                "hideframe": false
+                }, {
+                    "widget": "container",
+                    "text": "New Widget",
+                    "children": [{
+                            "widget": "html",
+                            "text": "New Widget",
+                            "html": "<div id=\"container\"><div id=\"icon\" style=\"color: rgb(248, 131, 105); background: rgb(248, 131, 105);\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i></div><div id=\"obj\"><span id=\"title\" style=\"color: rgb(248, 131, 105);\">Sales</span><div id=\"number\"><span>1,103,940</span></div></div></div>",
+                            "css": "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);\n\n/*! CSS Used from: Embedded */\n#container{display:flex;background:#fafafa;margin:1em;font-family:Montserrat;-webkit-box-shadow:0px 0px 4px 0.3px #ccc;-moz-box-shadow:0px 0px 4px 0.3px #ccc;box-shadow:0px 0px 4px 0.3px #ccc;height:max-content;}\n#container #icon{padding:2em;}\n#container #icon i{color:#eee;font-family:fontawesome;}\n#container #obj{padding:1em;min-width:5em;}\n#container #obj #title{color:#f88369;}\n#container #obj #number{color:#444;}\n\n",
+                            "hideframe": true,
+                            "title": null
+                        },
+                        {
+                            "widget": "html",
+                            "text": "New Widget",
+                            "html": "<div id=\"container\"><div id=\"icon\" style=\"color: rgb(248, 131, 105); background: rgb(248, 131, 105);\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i></div><div id=\"obj\"><span id=\"title\" style=\"color: rgb(248, 131, 105);\">Sales</span><div id=\"number\"><span>1,103,940</span></div></div></div>",
+                            "css": "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);\n\n/*! CSS Used from: Embedded */\n#container{display:flex;background:#fafafa;margin:1em;font-family:Montserrat;-webkit-box-shadow:0px 0px 4px 0.3px #ccc;-moz-box-shadow:0px 0px 4px 0.3px #ccc;box-shadow:0px 0px 4px 0.3px #ccc;height:max-content;}\n#container #icon{padding:2em;}\n#container #icon i{color:#eee;font-family:fontawesome;}\n#container #obj{padding:1em;min-width:5em;}\n#container #obj #title{color:#f88369;}\n#container #obj #number{color:#444;}\n\n",
+                            "hideframe": true
+                        },
+                        {
+                            "widget": "html",
+                            "text": "New Widget",
+                            "html": "<div id=\"container\"><div id=\"icon\" style=\"color: rgb(248, 131, 105); background: rgb(248, 131, 105);\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i></div><div id=\"obj\"><span id=\"title\" style=\"color: rgb(248, 131, 105);\">Sales</span><div id=\"number\"><span>1,103,940</span></div></div></div>",
+                            "css": "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);\n\n/*! CSS Used from: Embedded */\n#container{display:flex;background:#fafafa;margin:1em;font-family:Montserrat;-webkit-box-shadow:0px 0px 4px 0.3px #ccc;-moz-box-shadow:0px 0px 4px 0.3px #ccc;box-shadow:0px 0px 4px 0.3px #ccc;height:max-content;}\n#container #icon{padding:2em;}\n#container #icon i{color:#eee;font-family:fontawesome;}\n#container #obj{padding:1em;min-width:5em;}\n#container #obj #title{color:#f88369;}\n#container #obj #number{color:#444;}\n\n",
+                            "hideframe": true
+                        },
+                        {
+                            "widget": "html",
+                            "text": "New Widget",
+                            "html": "<div id=\"container\"><div id=\"icon\" style=\"color: rgb(248, 131, 105); background: rgb(248, 131, 105);\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i></div><div id=\"obj\"><span id=\"title\" style=\"color: rgb(248, 131, 105);\">Sales</span><div id=\"number\"><span>1,103,940</span></div></div></div>",
+                            "css": "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);\n\n/*! CSS Used from: Embedded */\n#container{display:flex;background:#fafafa;margin:1em;font-family:Montserrat;-webkit-box-shadow:0px 0px 4px 0.3px #ccc;-moz-box-shadow:0px 0px 4px 0.3px #ccc;box-shadow:0px 0px 4px 0.3px #ccc;height:max-content;}\n#container #icon{padding:2em;}\n#container #icon i{color:#eee;font-family:fontawesome;}\n#container #obj{padding:1em;min-width:5em;}\n#container #obj #title{color:#f88369;}\n#container #obj #number{color:#444;}\n\n",
+                            "hideframe": true
+                        }
+                    ],
+                    "layout": "vertical",
+                    "title": "SIGINT Statistics",
+                    "hideframe": false
+            }]
+    }
+}
