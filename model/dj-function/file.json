@@ -1,7 +1,7 @@
 {
     "djClassName": "org.dashjoin.function.Invoke",
     "ID": "file",
-    "expression": "$ls(\"file:upload\").$openJson($)",
+    "expression": "$ls(\"file:upload\").url.$openJson($)",
     "type": "read",
     "roles": [
         "authenticated"
