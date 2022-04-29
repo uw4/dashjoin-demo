@@ -1,5 +1,5 @@
 {
-    "djClassName": "org.dashjoin.mapping.ETL",
+    "djClassName": "com.dashjoin.function.ETL",
     "database": "sqlite",
     "ID": "misp",
     "roles": [
@@ -18,5 +18,8 @@
             "rowMapping": null,
             "rowFilter": null
         }
+    },
+    "expressions": {
+        "expression": "$ls(\"https://www.circl.lu/doc/misp/feed-osint/\").$[$contains(url, \"json\")].$[size < 1024 * 1024].url.$openJson($).Event.Attribute"
     }
 }
