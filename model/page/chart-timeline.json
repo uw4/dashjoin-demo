@@ -15,10 +15,10 @@
                 "rows": 1,
                 "cols": 1,
                 "style": {
-                    "scales.yAxes.ticks.min": "0",
-                    "scales.xAxes.type": "time",
-                    "scales.xAxes.ticks.min": "1998-02-01",
-                    "scales.xAxes.ticks.max": "1998-02-28"
+                    "scales.y.ticks.min": "0",
+                    "scales.x.type": "time",
+                    "scales.x.ticks.min": "1998-02-01",
+                    "scales.x.ticks.max": "1998-02-28"
                 }
             },
             {
@@ -28,7 +28,7 @@
                 "y": 0,
                 "rows": 1,
                 "cols": 1,
-                "markdown": "Timeline chart example. The x-axis is defined as a timeline. This causes dates with no value to be included with a value of 0:\n\n```\n{\n  \"widget\": \"chart\",\n  \"title\": \"Orders in February\",\n  \"query\": \"orders-over-time\",\n  \"database\": \"northwind\",\n  \"chart\": \"bar\",\n  \"style\": {\n    \"scales.yAxes.ticks.min\": \"0\",\n    \"scales.xAxes.type\": \"time\",\n    \"scales.xAxes.ticks.min\": \"1998-02-01\",\n    \"scales.xAxes.ticks.max\": \"1998-02-28\"\n  }\n}\n```"
+                "markdown": "Timeline chart example. The x-axis is defined as a timeline. This causes dates with no value to be included with a value of 0:\n\n```\n{\n  \"widget\": \"chart\",\n  \"title\": \"Orders in February\",\n  \"query\": \"orders-over-time\",\n  \"database\": \"northwind\",\n  \"chart\": \"bar\",\n  \"style\": {\n    \"scales.y.ticks.min\": \"0\",\n    \"scales.x.type\": \"time\",\n    \"scales.x.ticks.min\": \"1998-02-01\",\n    \"scales.x.ticks.max\": \"1998-02-28\"\n  }\n}\n```"
             }
         ]
     }
