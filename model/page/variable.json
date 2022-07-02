@@ -22,6 +22,31 @@
                 "database": "northwind",
                 "title": "Use the variable as query parameters (employees reporting to a manager)",
                 "arguments": "{\"node\": variable.node}"
+            },
+            {
+                "widget": "variable",
+                "text": "New Widget",
+                "title": "More Complex Form (see https://dashjoin.github.io/ for options)",
+                "properties": {
+                    "node": "string"
+                },
+                "createSchema": {
+                    "type": "object",
+                    "properties": {
+                        "node": {
+                            "type": "string",
+                            "widget": "select",
+                            "displayWithChoices": [
+                                "Fuller",
+                                "Buchanan"
+                            ],
+                            "choices": [
+                                2,
+                                5
+                            ]
+                        }
+                    }
+                }
             }
         ]
     }
