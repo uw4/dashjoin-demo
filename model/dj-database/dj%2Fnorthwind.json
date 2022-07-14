@@ -120,6 +120,14 @@
                     }
                 ]
             }
+        },
+        "US_CUSTOMERS": {
+            "properties": {
+                "CUSTOMER_ID": {
+                    "ref": "dj/northwind/CUSTOMERS/CUSTOMER_ID",
+                    "displayWith": "fk"
+                }
+            }
         }
     }
 }
