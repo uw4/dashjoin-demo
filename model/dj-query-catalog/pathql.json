@@ -1,0 +1,8 @@
+{
+    "ID": "pathql",
+    "query": "getPaths?pathQL=[eq <http://www.semwebtech.org/mondial/10/countries/CY/>]/(<http://www.semwebtech.org/mondial/10/meta#isMember>){1,2}",
+    "roles": [
+        "authenticated"
+    ],
+    "type": "read"
+}
