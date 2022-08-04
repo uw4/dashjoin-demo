@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import com.api.jsonata4java.Expression;
@@ -121,8 +122,13 @@ public class AppTest {
       String name = cases.next();
       ObjectNode c = (ObjectNode) map.get("cases").get(name);
 
-      if (c.has("url"))
-        c.set("data", objectMapper.readTree(new URL(c.get("url").asText())));
+      if (c.has("url")) {
+        URL url = new URL(c.get("url").asText());
+        if (c.get("url").asText().endsWith(".json"))
+          c.set("data", objectMapper.readTree(url));
+        else
+          c.put("data", IOUtils.toString(url.openStream()));
+      }
 
       if (map.has("basedata")) {
         ObjectNode basedata = map.get("basedata").deepCopy();
