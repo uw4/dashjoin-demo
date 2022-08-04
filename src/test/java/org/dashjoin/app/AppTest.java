@@ -120,23 +120,29 @@ public class AppTest {
     while (cases.hasNext()) {
       String name = cases.next();
       JsonNode c = map.get("cases").get(name);
-      ObjectNode basedata = map.get("basedata").deepCopy();
+      if (c.has("basedata")) {
+        ObjectNode basedata = map.get("basedata").deepCopy();
 
-      // merge base data
-      Iterator<String> dataFields = c.get("data").fieldNames();
-      while (dataFields.hasNext()) {
-        String field = dataFields.next();
-        basedata.set(field, c.get("data").get(field));
+        // merge base data
+        Iterator<String> dataFields = c.get("data").fieldNames();
+        while (dataFields.hasNext()) {
+          String field = dataFields.next();
+          basedata.set(field, c.get("data").get(field));
+        }
+
+        // eval and check
+        Assert.assertEquals("error in case: " + name, "" + c.get("expected"),
+            "" + evaluate(expr, basedata));
+      } else {
+        // eval and check
+        Assert.assertEquals("error in case: " + name, "" + c.get("expected"),
+            "" + evaluate(expr, c.get("data")));
       }
-
-      // eval and check
-      Assert.assertEquals("error in case: " + name, "" + c.get("expected"),
-          "" + evaluate(expr, basedata));
     }
   }
 
   @SuppressWarnings("unused")
-  JsonNode evaluate(String expr, ObjectNode basedata) throws Exception {
+  JsonNode evaluate(String expr, JsonNode basedata) throws Exception {
     if (false)
       // uses local JSONata4J (not recommended since there are slight differences to JSONataJS)
       return Expression.jsonata(expr).evaluate(basedata);
