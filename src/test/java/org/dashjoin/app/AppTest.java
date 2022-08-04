@@ -2,7 +2,11 @@ package org.dashjoin.app;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.Assert;
@@ -123,7 +127,6 @@ public class AppTest {
         Expression.jsonata(map.get("test").get("expression").asText()).evaluate(test).asText();
 
     // iterate cases
-    Expression e = Expression.jsonata(expr);
     Iterator<String> cases = map.get("cases").fieldNames();
     while (cases.hasNext()) {
       String name = cases.next();
@@ -139,7 +142,29 @@ public class AppTest {
 
       // eval and check
       Assert.assertEquals("error in case: " + name, "" + c.get("expected"),
-          "" + e.evaluate(basedata));
+          "" + evaluate(expr, basedata));
+    }
+  }
+
+  @SuppressWarnings("unused")
+  JsonNode evaluate(String expr, ObjectNode basedata) throws Exception {
+    if (false)
+      // uses local JSONata4J (not recommended since there are slight differences to JSONataJS)
+      return Expression.jsonata(expr).evaluate(basedata);
+    else {
+      // send to http://admin:djdjdj@localhost:8080
+      URL url = new URL("http://localhost:8080/rest/expression");
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      connection.setRequestMethod("POST");
+      connection.setDoOutput(true);
+      connection.setRequestProperty("content-type", "application/json");
+      connection.setRequestProperty("Authorization",
+          "Basic " + Base64.getEncoder().encodeToString("admin:djdjdj".getBytes()));
+      ObjectNode expAndData = objectMapper.createObjectNode();
+      expAndData.set("data", basedata);
+      expAndData.put("expression", expr);
+      objectMapper.writeValue(new OutputStreamWriter(connection.getOutputStream()), expAndData);
+      return objectMapper.readTree(connection.getInputStream());
     }
   }
 }
