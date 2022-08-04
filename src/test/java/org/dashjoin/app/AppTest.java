@@ -42,8 +42,8 @@ public class AppTest {
       "chart", "card", "expansion", "edit", "all", "create", "container", "grid", "display",
       "${pk1}", "text", "activity-status", "upload", "icon", "spacer", "layout-edit-switch",
       "search", "search-result", "toolbar", "table", "queryeditor", "editRelated", "markdown",
-      "page", "tree", "variable", "sidenav-switch", /* json schema form */ "textarea", "select",
-      "map", "html");
+      "page", "tree", "variable", "sidenav-switch", "map", "html",
+      /* json schema form */ "textarea", "select", "date");
 
   /**
    * dashjoin JSONata functions
