@@ -30,6 +30,12 @@
             "expected": {
                 "result": 7
             }
+        },
+        "test4": {
+            "url": "file:upload/test.json",
+            "expected": {
+                "result": 5.141500000000001
+            }
         }
     }
 }

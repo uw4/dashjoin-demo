@@ -119,8 +119,12 @@ public class AppTest {
     Iterator<String> cases = map.get("cases").fieldNames();
     while (cases.hasNext()) {
       String name = cases.next();
-      JsonNode c = map.get("cases").get(name);
-      if (c.has("basedata")) {
+      ObjectNode c = (ObjectNode) map.get("cases").get(name);
+
+      if (c.has("url"))
+        c.set("data", objectMapper.readTree(new URL(c.get("url").asText())));
+
+      if (map.has("basedata")) {
         ObjectNode basedata = map.get("basedata").deepCopy();
 
         // merge base data
