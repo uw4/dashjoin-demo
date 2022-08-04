@@ -38,7 +38,8 @@ public class AppTest {
       "chart", "card", "expansion", "edit", "all", "create", "container", "grid", "display",
       "${pk1}", "text", "activity-status", "upload", "icon", "spacer", "layout-edit-switch",
       "search", "search-result", "toolbar", "table", "queryeditor", "editRelated", "markdown",
-      "page", "tree", "variable", "sidenav-switch", /* json schema form */ "textarea", "select");
+      "page", "tree", "variable", "sidenav-switch", /* json schema form */ "textarea", "select",
+      "map", "html");
 
   /**
    * dashjoin JSONata functions
@@ -46,7 +47,8 @@ public class AppTest {
   List<String> functions = Arrays.asList("$all", "$read", "$create", "$update", "$traverse",
       "$delete", "$query", "$queryGraph", "$call", "$incoming", "$trigger", "$djRoles",
       "$djVersion", "$djGetDatabases", "$djGetDrivers", "$djGetFunctions", "$echo",
-      "$alterColumnTrigger", "$alterTableTrigger", "$doc2data", "$djSubscription", "$crawl");
+      "$alterColumnTrigger", "$alterTableTrigger", "$doc2data", "$djSubscription", "$crawl", "$ls",
+      "$openText", "$openJson");
 
   /**
    * syntax check of the files in the model folder
@@ -62,7 +64,7 @@ public class AppTest {
         JsonNode widgets = Expression.jsonata("**.widget").evaluate(tree);
         if (widgets != null) {
           for (JsonNode widget : widgets instanceof TextNode ? Arrays.asList(widgets) : widgets) {
-            Assert.assertTrue(allowedWidget.contains(widget.asText()));
+            Assert.assertTrue("Illegal widget: " + widget, allowedWidget.contains(widget.asText()));
           }
         }
 
@@ -85,7 +87,8 @@ public class AppTest {
                 expr.evaluate(null);
               } catch (EvaluateException e) {
                 // function signature does not match is expected
-                Assert.assertTrue(e.getMessage().contains("does not match function signature"));
+                Assert.assertTrue("Invalid expression: " + expression,
+                    e.getMessage().contains("does not match function signature"));
               }
             }
           }
