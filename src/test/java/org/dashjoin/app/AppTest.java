@@ -2,6 +2,7 @@ package org.dashjoin.app;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -81,19 +82,7 @@ public class AppTest {
             for (JsonNode expression : expressions instanceof TextNode ? Arrays.asList(expressions)
                 : expressions) {
               // parse expression
-              Expressions expr = Expressions.parse(expression.asText());
-
-              // register Dashjoin custom functions
-              for (String function : functions)
-                expr.getEnvironment().setJsonataFunction(function, new FloorFunction());
-              try {
-                // evaluate
-                expr.evaluate(null);
-              } catch (EvaluateException e) {
-                // function signature does not match is expected
-                Assert.assertTrue("Invalid expression: " + expression,
-                    e.getMessage().contains("does not match function signature"));
-              }
+              parse(expression.asText());
             }
           }
         }
@@ -165,6 +154,39 @@ public class AppTest {
       expAndData.put("expression", expr);
       objectMapper.writeValue(new OutputStreamWriter(connection.getOutputStream()), expAndData);
       return objectMapper.readTree(connection.getInputStream());
+    }
+  }
+
+  @SuppressWarnings("unused")
+  void parse(String expression) throws Exception {
+    if (false) {
+      // uses local JSONata4J (not recommended since there are slight differences to JSONataJS)
+      Expressions expr = Expressions.parse(expression);
+
+      // register Dashjoin custom functions
+      for (String function : functions)
+        expr.getEnvironment().setJsonataFunction(function, new FloorFunction());
+      try {
+        // evaluate
+        expr.evaluate(null);
+      } catch (EvaluateException e) {
+        // function signature does not match is expected
+        Assert.assertTrue("Invalid expression: " + expression,
+            e.getMessage().contains("does not match function signature"));
+      }
+    } else {
+      // send to http://admin:djdjdj@localhost:8080
+      URL url = new URL("http://localhost:8080/rest/expression-preview/parse");
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      connection.setRequestMethod("POST");
+      connection.setDoOutput(true);
+      connection.setRequestProperty("content-type", "application/json");
+      connection.setRequestProperty("Authorization",
+          "Basic " + Base64.getEncoder().encodeToString("admin:djdjdj".getBytes()));
+      try (OutputStream os = connection.getOutputStream()) {
+        os.write(expression.getBytes());
+      }
+      objectMapper.readTree(connection.getInputStream());
     }
   }
 }
