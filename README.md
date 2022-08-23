@@ -31,7 +31,7 @@ set DJ_ADMIN_PASS=djdjdj
 Dashjoin.exe
 ```
 
-You can also check out a read-only copy by visiting https://demo.my.dashjoin.com/ and logging in with the guest user.
+You can also check out a read-only copy by visiting https://demo.my.dashjoin.com/.
 
 ## Unit Testing the App
 
