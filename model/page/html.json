@@ -13,9 +13,10 @@
             {
                 "widget": "html",
                 "title": "Data Fed by Employees",
-                "html": "<ul>\n  <% for (i of context) { %>\n    <li>\n      <%=i.LAST_NAME%>\n    </li>\n  <% } %>\n</ul>\n",
+                "html": "<ul>\n  <% for (i of context) { %>\n    <li>\n      <%=i.LAST_NAME%>\n    </li>\n  <% } %>\n</ul>\n\n<button onClick=\"go()\">Download</button>",
                 "css": "ul {\n  padding: 1em;\n}\nli {\n  background: yellow;\n}",
-                "context": "$all(\"northwind\", \"EMPLOYEES\")"
+                "context": "$all(\"northwind\", \"EMPLOYEES\")",
+                "script": "function go() {\n  saveAs(new Blob([JSON.stringify(context, null, 2)], { type: 'text/plain' }), 'download.txt')\n}"
             },
             {
                 "widget": "html",
