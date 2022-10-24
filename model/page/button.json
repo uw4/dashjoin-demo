@@ -36,7 +36,7 @@
             },
             {
                 "widget": "button",
-                "text": "Call Log Function directly with hard coded parameters",
+                "text": "Call Log Function directly with hard-coded parameters",
                 "print": "$echo(\"Back from \\\"the\\\" \\\\ server\")",
                 "title": "Live Example"
             }
