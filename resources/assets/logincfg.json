@@ -1,0 +1,7 @@
+{
+    "signInTabText": "Dashjoin Demo Login",
+    "signInCardTitleText": "Enter Your Credentials",
+    "registrationEnabled": false,
+    "resetPasswordEnabled": false,
+    "providers": ""
+}
